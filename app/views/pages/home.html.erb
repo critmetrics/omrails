@@ -1,31 +1,37 @@
-<div class="hero-unit">
+<% if user_signed_in? %>
+	<h1>YOU ARE LOGGED IN - THIS IS PRIVATE LOGIN AREA</h1>
 
-	<h1>Welcome to NewCo!</h1>
+	<% else %>
+	<div class="hero-unit">
 
-	<p>
-	You have found the homepage for 
-	<%= link_to "One month rails", "#" %>
-	<%= link_to "Super Secret App page", "#" %>
-	</p>
+		<h1>Welcome to NewCo!</h1>
 
-	<p>
-	<%= link_to "Sign Up Now" , "#" , class: "btn btn-primary btn-large" %>
-	</p>
+		<p>
+		You have found the homepage for 
+		<%= link_to "One month rails", "#" %>
+		<%= link_to "Super Secret App page", "#" %>
+		</p>
 
-</div>
+		<p>
+		<%= link_to "Sign Up Now" , new_user_registration_path, class: "btn btn-primary btn-large" %>
+		</p>
 
-<div class="row">
-  <div class="span4">
-  	<h3>Benefit one</h3>
-  		<p>Some text describing the benefit</p>
-  	</div>
-  <div class="span4">
-	<h3>Benefit two</h3>
-  		<p>Some text describing the benefit</p>
-  </div>
-  <div class="span4">
-	<h3>Benefit three</h3>
-  		<p>Some text describing the benefit</p>
-  </div>
-</div>
+	</div>
+
+	<div class="row">
+	  <div class="span4">
+	  	<h3>Benefit one</h3>
+	  		<p>Some text describing the benefit</p>
+	  	</div>
+	  <div class="span4">
+		<h3>Benefit two</h3>
+	  		<p>Some text describing the benefit</p>
+	  </div>
+	  <div class="span4">
+		<h3>Benefit three</h3>
+	  		<p>Some text describing the benefit</p>
+	  </div>
+	</div>
+
+<% end %>
 
