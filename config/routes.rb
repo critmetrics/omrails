@@ -7,8 +7,10 @@ Omrails::Application.routes.draw do
 
   devise_for :views
 
-  devise_for :users
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
+controllers: {omniauth_callbacks: "authentications", registrations: "registrations"}
   match 'users/:id' => 'users#show', as: :user
+  
 
   get 'about' => 'pages#about'
   root :to => 'pins#index'

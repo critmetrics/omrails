@@ -11,4 +11,9 @@
   </div>
 <% end %>
 
+<p>
+<li><%= link_to "Twitter", user_omniauth_authorize_path(:twitter) %></li>
+ <li><%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %></li>
+</p>
+
 <%= render "devise/shared/links" %>
