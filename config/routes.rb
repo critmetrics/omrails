@@ -3,17 +3,20 @@ Omrails::Application.routes.draw do
   get "users/show"
 
   resources :pins
+  resources :authentications
 
 
   devise_for :views
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
-controllers: {omniauth_callbacks: "authentications", registrations: "registrations"}
+                        controllers: {omniauth_callbacks: "authentications", registrations: "registrations"}
   match 'users/:id' => 'users#show', as: :user
   
 
   get 'about' => 'pages#about'
-  root :to => 'pins#index'
+  root to: 'authentications#home'
+
+  #root :to => 'pins#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
