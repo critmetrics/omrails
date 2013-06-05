@@ -14,7 +14,9 @@ Omrails::Application.routes.draw do
   
 
   get 'about' => 'pages#about'
-  root to: 'authentications#home'
+
+  
+  root to: 'pins#index'
 
   #root :to => 'pins#index'
 

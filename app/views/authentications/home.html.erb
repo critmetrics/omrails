@@ -1,9 +1,30 @@
+
+
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
   <%= link_to 'Edit profile', edit_user_registration_path %> |
   <%= link_to 'Authentications', authentications_path %> |
   <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+	
+	<div class="hero-unit">
+
+		<h1>Welcome back</h1>
+
+		<p>
+		You have found the homepage for 
+		<%= link_to "One month rails", "#" %>
+		<%= link_to "Super Secret App page", "#" %>
+		</p>
+		</div>
+
+
+	<%= render 'pages/home' %>
+	
+
 <% else %>
+
+<%= render 'pages/home' %>
+
   <%= link_to "Sign up", new_user_registration_path %> |
   <%= link_to "Login", new_user_session_path %>
 	 <li><%= link_to "Twitter", user_omniauth_authorize_path(:twitter) %></li>
