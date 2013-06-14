@@ -53,11 +53,16 @@
 	  		<p>Show off your photography and filter by users!</p>
 	  </div>
 	</div>
-
+<%
+=begin
+%>
 	  <%= link_to "Sign up", new_user_registration_path %> |
 	  <%= link_to "Login", new_user_session_path %>
-		<li><%= link_to "Twitter", user_omniauth_authorize_path(:twitter) %></li>
+	  <li><%= link_to "Twitter", user_omniauth_authorize_path(:twitter) %></li>
     <li><%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %></li>
+<% 
+=end
+%>
 
 <% end %>
 
