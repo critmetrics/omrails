@@ -10,17 +10,12 @@
 			<h1>Welcome back <%= current_user.email %></h1>
 
 				<p>
-				You have found the homepage for my photo sharing
-				<%= link_to "Teach myself to code project", "http://photoapp.johnlarkin.me" %>
+				Feel free to click on a photo to see a bigger version, or upload your own. 
+			</p>
+			<p> See a bit more info about me 
+				<%= link_to "here", "http://www.johnlarkin.me" %>
 				</p>
 		</div>
-
-		<h1>Check out some photos. </h1>
-		<p>
-			 Feel free to create an account and upload some of your own. Please bear in mind this is a work in progress though :P
-		</p>
-	</p> 
-	I am using Ruby on Rails </p>
 
 <% else %>
 
@@ -28,13 +23,16 @@
 
 		<h1>Welcome to Photo App</h1>
 
+		<br></br>
 		<p>
 		This is a project I am working on to help me learn to code. You can find out more about me 
 		<%= link_to "John Larkin", "http://johnlarkin.me" %> here. </p>
 		<p> Or say hello on 
 		<%= link_to "Twitter", "http://twitter.com/jlarkin353" %>
 		</p>
-
+		<p>
+			 Feel free to create an account and upload some of your own. Please bear in mind this is a work in progress though :P
+		</p>
 		<p>
 		<%= link_to "Sign Up Now" , new_user_registration_path, class: "btn btn-primary btn-large" %>
 		</p>
@@ -43,16 +41,16 @@
 
 	<div class="row">
 	  <div class="span4">
-	  	<h3>Benefit one</h3>
-	  		<p>Some text describing the benefit</p>
+	  	<h3>	Check out some photos below </h3>
+	  		<p>Anoyone can create an account and upload a photo and a description. Note the infinite scroll. That was complicated.</p>
 	  	</div>
 	  <div class="span4">
-		<h3>Benefit two</h3>
-	  		<p>Some text describing the benefit</p>
+		<h3>Create a free account</h3>
+	  		<p>Once logged in you can edit your photos & account settings. I don't use any info you provide because I haven't figured out how to do that yet muhaha</p>
 	  </div>
 	  <div class="span4">
 		<h3>Benefit three</h3>
-	  		<p>Some text describing the benefit</p>
+	  		<p>Show off your photography and filter by users!</p>
 	  </div>
 	</div>
 
