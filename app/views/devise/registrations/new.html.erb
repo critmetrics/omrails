@@ -1,20 +1,28 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div class="form-actions">
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+<%= link_to "Sign up with Facebook", user_omniauth_authorize_path(:facebook), class: "btn-auth btn-facebook large" %>
+<%= link_to "Sign up with Twitter", user_omniauth_authorize_path(:twitter), class: "btn-auth btn-twitter large" %>
 
-<% if @user.password_required? %>
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+</div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
- <% end %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { class: 'form-horizontal'}) do |f| %>
 
-  <div><%= f.submit "Sign up" %></div>
+	<%= f.input :name %>
+	<%= f.input :email %>
+	<%= f.input :password %>
+  <%= f.input :password_confirmation %>
+
+  <%= render "devise/shared/links" %>
+
+
+  <div class="form-actions">
+   <%= f.submit "Sign up", class: "btn btn-primary" %>
+
+
+
+  </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
