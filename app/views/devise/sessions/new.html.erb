@@ -1,6 +1,15 @@
+<%= stylesheet_link_tag    "users", :media => "all" %>
+
 <h2>Sign in</h2>
 
+
+
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { class: 'form-horizontal'}) do |f| %>
+
+<div class="form-actions">
+<%= f.submit "Sign in with Twitter", class: "btn-auth btn-twitter large" %>
+<%= f.submit "Sign in with Facebook", class: "btn-auth btn-facebook large" %>
+</div>
 
   <%= f.input :email %>
   <%= f.input :password %>
@@ -8,6 +17,8 @@
 
   <div class="form-actions">
     <%= f.submit "Sign in", class: "btn btn-primary" %>
+ 
+
   </div>
 <% end %>
 
