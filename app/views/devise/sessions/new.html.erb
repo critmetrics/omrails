@@ -1,14 +1,20 @@
 
+
 <h2>Sign in</h2>
+
+<div class="form-actions">
+
+<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "btn-auth btn-facebook large" %>
+<%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), class: "btn-auth btn-twitter large" %>
+
+</div>
+
+
+
 
 
 
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { class: 'form-horizontal'}) do |f| %>
-
-<div class="form-actions">
-<%= link_to "Sign in with Twitter", class: "btn-auth btn-twitter large", user_omniauth_authorize_path(:twitter) %>
-<%= f.submit "Sign in with Facebook", class: "btn-auth btn-facebook large" %>
-</div>
 
   <%= f.input :email %>
   <%= f.input :password %>
